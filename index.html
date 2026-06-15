@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACK GAME |  Recargas y Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .brand-font {
+            font-family: 'Poppins', system_ui, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .gaming-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gaming-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .neon-orange {
+            color: #ff6b00;
+        }
+
+        .nav-active {
+            color: #ff6b00;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between py-5">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-gamepad text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="brand-font text-3xl font-bold tracking-tighter">JACK GAME</span>
+                    </div>
+                </div>
+
+       
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="max-w-screen-2xl mx-auto px-6 md:px-10 pt-12 pb-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text -->
+            <div>
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-zinc-900 border border-zinc-800 rounded-3xl mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-semibold tracking-wider text-emerald-400">ACTIVO AHORA</span>
+                </div>
+                
+                <h1 class="section-title text-6xl md:text-7xl tracking-tighter leading-none">
+                    Hola, soy<br>
+                    <span class="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">JACK GAME</span>
+                </h1>
+                
+                <p class="mt-6 text-2xl text-zinc-300 max-w-lg">
+                  Recarga tus juegos favoritos
+                    y acceso a las mejores cuentas de streaming.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="recarga.html" 
+                       class="px-8 py-4 bg-white text-zinc-900 font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-zinc-100 active:scale-[0.985] transition-all">
+                        <span>Ver juegos</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <button onclick="contactarWhatsApp()" 
+                            class="px-8 py-4 border border-white/30 hover:bg-white/5 font-semibold rounded-3xl flex items-center gap-x-3 transition-all">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Hablar conmigo</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-6 mt-8 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span class="text-zinc-400">+1,240 jugadores</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span class="text-zinc-400">+850 recargas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="relative hidden md:block">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 shadow-2xl">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-user-ninja text-white text-4xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-2xl">JACK GAME</div>
+                            <div class="text-emerald-400 text-sm">• Disponible ahora</div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-10 py-12 border-t border-zinc-800">
+        <div class="max-w-3xl">
+            <h2 class="section-title mb-6">¿Quién soy?</h2>
+            <div class="prose prose-invert text-lg text-zinc-300">
+                <p>Soy <strong>JACK GAME</strong>, gamer apasionado</p>
+                <p>Me dedico a la recarga en diversos juegos online, Free Fire, Delta Force, Roblo, blood Strike, Mobile Legends, Razer Gold, y más en BOLIVIA, recargas rápidas y seguras. Además ofrezco cuentas de streaming premium, Netflix, Disney, CapCut, Crunchyroll y mucho más...</p>
+                <p>Mi misión es que disfrutes al máximo del juego y del entretenimiento, sin complicaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-10 py-12">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <h2 class="section-title">Mis servicios</h2>
+                <p class="text-zinc-400 mt-1">Todo lo que necesitas en un solo lugar</p>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            
+            <!-- Recargas -->
+            <div class="gaming-card bg-zinc-900 border border-zinc-700 rounded-3xl p-7 flex flex-col">
+                <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-gem text-emerald-400 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Recargas tus juegos</h3>
+                <p class="text-zinc-400 flex-1">Recargas instantáneas y seguras en todos tus juegos: Free fire, Roblox, blood Strike, Mobile Legends, Razer Gold, Delta Force, y mucho más... Entrega en minutos por WhatsApp.</p>
+                
+                <a href="recarga.html"
+                        class="mt-6 inline-flex items-center justify-center gap-x-2 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 font-semibold rounded-2xl active:scale-[0.985]">
+                    <i class="fa-solid fa-gem" style="color: rgb(198, 198, 198);"></i>
+                    <span>Recargar ahora</span>
+                </a>
+            </div>
+            
+            <!-- Streaming -->
+            <div class="gaming-card bg-zinc-900 border border-zinc-700 rounded-3xl p-7 flex flex-col">
+                <div class="w-14 h-14 bg-violet-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-tv text-violet-400 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Cuentas de Streaming</h3>
+                <p class="text-zinc-400 flex-1">Netflix, Disney+, HBO, CapCut, Crunchyroll y más. Cuentas premium compartidas o individuales. Acceso inmediato.</p>
+                
+                <a href="streaming/streaming-home.html" 
+                   class="mt-6 inline-flex items-center justify-center gap-x-2 px-6 py-3.5 border border-white/30 hover:bg-white/5 font-semibold rounded-2xl active:scale-[0.985]">
+                    Ver catálogo de streaming
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-10 py-12 border-t border-zinc-800">
+        <h2 class="section-title mb-8 text-center">Lo que dicen nuestros jugadores</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- Reseña 1 -->
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-6">
+                <div class="flex items-center gap-x-1 mb-4 text-orange-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300">"Los torneos de ADM JACK son los más organizados que he jugado. Todo claro, premios rápidos y cero problemas. ¡Recomendado!"</p>
+                <div class="mt-4 flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-zinc-700 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-user text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Carlos "Shadow" Mendoza</div>
+                        <div class="text-xs text-zinc-400">Jugador Squad • Santa Cruz</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reseña 2 -->
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-6">
+                <div class="flex items-center gap-x-1 mb-4 text-orange-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-zinc-300">"Recargo diamantes con ADM JACK desde hace meses. Siempre llegan en menos de 2 minutos y el precio es el mejor que he encontrado. 100% confiable."</p>
+                <div class="mt-4 flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-zinc-700 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-user text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Laura "LauGamer" Vargas</div>
+                        <div class="text-xs text-zinc-400">Jugadora Solo • La Paz</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reseña 3 -->
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-6">
+                <div class="flex items-center gap-x-1 mb-4 text-orange-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300">"Me uní al Squad Wars y quedamos Top 2. El premio llegó el mismo día. La organización es profesional y los árbitros son justos. ¡Volveré a participar!"</p>
+                <div class="mt-4 flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-zinc-700 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-user text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Equipo "Los Titanes"</div>
+                        <div class="text-xs text-zinc-400">Squad • Cochabamba</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-10 py-16 border-t border-zinc-800">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10 md:p-14 text-center">
+            <h2 class="section-title mb-4">¿Listo para el entrenamiento  o recargar tus juegos favoritos?</h2>
+            <p class="text-xl text-zinc-300 max-w-md mx-auto mb-8">Escríbeme por WhatsApp y te ayudo en minutos.</p>
+            
+            <button onclick="contactarWhatsApp()" 
+                    class="px-10 py-4 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 font-bold text-lg rounded-3xl flex items-center gap-x-3 mx-auto active:scale-[0.985]">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Chatear con Jack Game</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-900 border-t border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-10 py-10 text-sm">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-4">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-gamepad text-white"></i>
+                    </div>
+                    <span class="font-semibold">JACK GAME © 2026</span>
+                </div>
+                
+                <div class="flex items-center gap-x-6 text-zinc-400">
+                    <a href="#" class="hover:text-white">Términos</a>
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                    <button onclick="contactarWhatsApp()" class="hover:text-white flex items-center gap-x-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>+591 63614354</span>
+                        
+                    </button>
+               
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind config
+        function initTailwind() {
+            document.documentElement.style.setProperty('--accent', '#ff6b00');
+        }
+
+        // WhatsApp functions
+        function contactarWhatsApp() {
+            const message = encodeURIComponent("Hola JACK GAME, quiero más información sobre tus servicios.");
+            window.open(`https://wa.me/59163614354?text=${message}`, '_blank');
+        }
+
+        
+        // Initialize
+        function initialize() {
+            initTailwind();
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            console.log('%c[JACK GAME] Página de inicio lista.', 'color:#666');
+        }
+
+        window.onload = initialize;
+    </script>
+</body>
+</html>
