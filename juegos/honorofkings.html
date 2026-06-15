@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recargar Honor of Kings | JACK GAME</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .brand-font { font-family: 'Poppins', system_ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen">
+
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-inner">
+                    <i class="fa-solid fa-gamepad text-white text-2xl"></i>
+                </div>
+                <div>
+                    <span class="brand-font text-3xl font-bold tracking-tighter">JACK GAME</span>
+                </div>
+            </div>
+            <a href="../recarga.html" class="text-orange-400 hover:text-orange-300 flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Catálogo
+            </a>
+        </div>
+    </nav>
+
+    <div class="max-w-2xl mx-auto px-6 py-10">
+
+        <!-- Aviso Importante -->
+        <div class="bg-yellow-600/10 border border-yellow-500/30 rounded-3xl p-5 mb-8">
+            <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-yellow-400 mt-1 text-xl"></i>
+                <div>
+                    <p class="font-semibold text-yellow-400">Importante</p>
+                    <p class="text-sm text-zinc-300">
+                        Esta página <strong>NO recarga automáticamente</strong>.<br>
+                        Solo haces una solicitud y yo te recargo de forma <strong>Persona a Persona (P2P)</strong>.<br>
+                        Es seguro, confiable y acepto pago por <strong>QR</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-bold text-center mb-2">Recargar Honor of Kings</h1>
+        <p class="text-center text-zinc-400 mb-10">Diamantes • Vouchers • Battle Pass • Skins</p>
+
+        <!-- Paquetes -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10" id="packages"></div>
+
+        <!-- Datos del Jugador -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 mb-8">
+            <h2 class="text-xl font-semibold mb-6">Tus datos</h2>
+            
+            <div class="space-y-6">
+                <!-- ID -->
+                <div>
+                    <label class="block text-sm font-medium mb-2">ID de Usuario (User ID)</label>
+                    <input type="text" id="playerId" 
+                           class="w-full bg-zinc-800 border border-zinc-600 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 text-lg"
+                           placeholder="Ej: 123456789">
+                </div>
+
+                <!-- Nombre en el juego -->
+                <div>
+                    <label class="block text-sm font-medium mb-2">Nombre en Honor of Kings</label>
+                    <input type="text" id="playerName" 
+                           class="w-full bg-zinc-800 border border-zinc-600 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 text-lg"
+                           placeholder="Ej: TuNombre123">
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón WhatsApp -->
+        <button onclick="enviarWhatsApp()" id="whatsappBtn"
+                class="w-full py-5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl font-bold text-xl flex items-center justify-center gap-3 hover:scale-105 transition-all">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+            <span>Solicitar Recarga por WhatsApp</span>
+        </button>
+
+        <p class="text-center text-xs text-zinc-500 mt-6">
+            Te responderé lo más pronto posible para confirmar el pago
+        </p>
+    </div>
+
+    <script>
+        let selectedPackage = null;
+
+        const packages = [
+            { amount: "16 fichas", price: "3" },
+            { amount: "80 fichas", price: "10" },
+            { amount: "240 fichas", price: "35" },
+            { amount: "400 fichas", price: "60" },
+            { amount: "830 fichas", price: "120" },
+            { amount: "1245 fichas", price: "165" }, 
+            { amount: "4180 tokens", price: "540" },
+            { amount: "8360 tokens", price: "1100" },
+            { amount: "bolsa de la suerte x2 fichas", price: "5" },
+            { amount: "Paquete puntos de honor", price: "5" },
+            { amount: "tarjeta semanal", price: "12" }, 
+            { amount: "Paquete semanal plus", price: "36" }
+        ];
+
+        function renderPackages() {
+            const container = document.getElementById('packages');
+            container.innerHTML = '';
+            
+            packages.forEach(pkg => {
+                const div = document.createElement('div');
+                div.className = `bg-zinc-900 border-2 ${selectedPackage === pkg.amount ? 'border-orange-500 scale-105' : 'border-zinc-700 hover:border-orange-500'} rounded-3xl p-6 text-center cursor-pointer transition-all`;
+                div.innerHTML = `
+                    <h3 class="text-3xl font-bold text-orange-400">${pkg.amount}</h3>
+                    <p class="text-2xl font-bold mt-3">Bs. ${pkg.price}</p>
+                `;
+                div.onclick = () => {
+                    selectedPackage = pkg.amount;
+                    renderPackages();
+                };
+                container.appendChild(div);
+            });
+        }
+
+        function enviarWhatsApp() {
+            const id = document.getElementById('playerId').value.trim();
+            const name = document.getElementById('playerName').value.trim();
+
+            if (!selectedPackage) {
+                alert("Por favor selecciona un paquete");
+                return;
+            }
+            if (!id) {
+                alert("Por favor ingresa tu ID de Usuario");
+                return;
+            }
+            if (!name) {
+                alert("Por favor ingresa tu nombre en Honor of Kings");
+                return;
+            }
+
+            const price = packages.find(p => p.amount === selectedPackage).price;
+
+            const mensaje = encodeURIComponent(
+                `🟢 *Solicitud de Recarga Honor of Kings*\n\n` +
+                `💎 Paquete: ${selectedPackage}\n` +
+                `💰 Precio: Bs. ${price}\n` +
+                `🆔 ID: ${id}\n` +
+                `👤 Nombre: ${name}\n\n` +
+                `Confirmar recarga por favor.`
+            );
+
+            window.open(`https://wa.me/5511966019490?text=${mensaje}`, '_blank');
+        }
+
+        window.onload = renderPackages;
+    </script>
+</body>
+</html>
